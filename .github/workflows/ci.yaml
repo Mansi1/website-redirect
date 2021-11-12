@@ -13,7 +13,9 @@ jobs:
       - name: make foler
         run: mkdir docs
       - name: copy files
-        run: cp CNAME index.html docs && cp index.html docs/404.html
+        run: cp index.html docs && cp index.html docs/404.html
+      - name: create cname
+        run: touch docs/CNAME && echo m.mannseicher.com >> docs/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
